@@ -4,7 +4,7 @@ import Links from "./Links.astro";
 
 <section>
   <aside>
-    <img src="/favicon.png" alt="" width="80" height="80" />
+    <img src="/github-user.png" alt="" width="150" height="150" />
   </aside>
 
   <article>
@@ -19,7 +19,7 @@ import Links from "./Links.astro";
 
     <p>This profile has no bio</p>
 
-    <section>
+    <section class="stats">
       <div>
         <h4>Repos</h4>
         <span>8</span>
@@ -37,3 +37,80 @@ import Links from "./Links.astro";
     <Links />
   </article>
 </section>
+
+<style scoped>
+  section {
+    background: var(--dark-blue2);
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    /* justify-content: space-evenly; */
+    /* gap: 2rem; */
+  }
+
+  aside {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 25%;
+  }
+
+  article {
+    /* margin-left: 2rem; */
+    /* margin-top: 2rem; */
+    width: 75%;
+    padding-right: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    /* border: 1px solid var(--dark-blue); */
+  }
+
+  header h2,
+  h4 {
+    margin: 0;
+  }
+
+  header h2 {
+    font-weight: bold;
+  }
+
+  header h4 {
+    color: var(--dark-blue);
+  }
+
+  header span {
+    display: block;
+    margin-top: 0.2rem;
+    /* margin-right: 2rem; */
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .stats {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    background: var(--dark-black);
+  }
+
+  .stats div {
+    padding: 1rem 0;
+    width: 33%;
+  }
+
+  .stats div:nth-child(1) {
+    padding-left: 1.5rem;
+  }
+</style>
