@@ -1,36 +1,59 @@
 ---
 import Links from "./Links.astro";
+
+import { userGithub } from "@store/state";
+
+const {
+  name,
+  login,
+  avatar_url,
+  bio,
+  created_at,
+  public_repos,
+  followers,
+  following,
+} = userGithub.get();
+
+// format date in day month year
+const formatDate = (date: string) => {
+  const newDate = new Date(date);
+  const month = newDate.toLocaleString("default", { month: "short" });
+  const day = newDate.getDate();
+  const year = newDate.getFullYear();
+
+  return `${day} ${month} ${year}`;
+};
 ---
 
 <section>
   <aside>
-    <img src="/github-user.png" alt="" width="150" height="150" />
+    <img src={avatar_url} alt="" width="150" height="150" />
   </aside>
 
   <article>
     <header>
       <div>
-        <h2>The Octocat</h2>
-        <h4>@octocat</h4>
+        <h2>{name}</h2>
+        <h4>@{login}</h4>
       </div>
 
-      <span>Joined 25 Jan 2011</span>
+      <span>Joined {formatDate(created_at)}</span>
     </header>
 
-    <p>This profile has no bio</p>
+    <p>{bio}</p>
 
     <section class="stats">
       <div>
         <h4>Repos</h4>
-        <span>8</span>
+        <span>{public_repos}</span>
       </div>
       <div>
         <h4>Followers</h4>
-        <span>3448</span>
+        <span>{followers}</span>
       </div>
       <div>
         <h4>Following</h4>
-        <span>11</span>
+        <span>{following}</span>
       </div>
     </section>
 
@@ -39,6 +62,9 @@ import Links from "./Links.astro";
 </section>
 
 <style scoped>
+  img {
+    border-radius: 50%;
+  }
   section {
     background: var(--dark-blue2);
     margin-top: 1rem;

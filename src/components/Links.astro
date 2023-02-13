@@ -1,27 +1,30 @@
 ---
+import { userGithub } from "@store/state";
+
+const { twitter_username, blog, location, company } = userGithub.get();
 ---
 
 <ul>
   <div>
     <li>
       <img src="icons/icon-location.svg" alt="" />
-      <span>San Francisco</span>
+      <span>{location}</span>
     </li>
 
     <li>
       <img src="icons/icon-website.svg" alt="" />
-      <span>https://github.blog</span>
+      <a href={blog}>{blog}</a>
     </li>
   </div>
   <div>
     <li class="desactived">
       <img src="icons/icon-twitter.svg" alt="" />
-      <span>Not Available</span>
+      <span>{twitter_username}</span>
     </li>
 
     <li>
       <img src="icons/icon-company.svg" alt="" />
-      <span>@github</span>
+      <span>{company}</span>
     </li>
   </div>
 </ul>
