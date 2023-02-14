@@ -15,7 +15,7 @@ export type UserGithub = {
   twitter_username: string;
 };
 
-export const userGithub = atom<UserGithub>({
+const userGithub = atom<UserGithub>({
   avatar_url: "https://avatars.githubusercontent.com/u/61170485?v=4",
   name: "Alexander Granados",
   login: "g1alexander",
@@ -29,3 +29,9 @@ export const userGithub = atom<UserGithub>({
   blog: "g1alexander.com",
   twitter_username: "g1alexander_",
 });
+
+const setData = (data: UserGithub) => {
+  userGithub.set(data);
+};
+
+export { userGithub, setData };
