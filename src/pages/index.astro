@@ -1,6 +1,6 @@
 ---
-import Card from "@components/Card.astro";
-import Search from "@components/Search.astro";
+import Card from "@components/Card";
+import Search from "@components/Search";
 import Title from "@components/Title.astro";
 import Layout from "@layouts/Layout.astro";
 
@@ -10,8 +10,8 @@ import Layout from "@layouts/Layout.astro";
 <Layout title="devfinder">
   <main>
     <Title />
-    <Search />
-    <Card />
+    <Search client:load />
+    <Card client:load />
   </main>
 </Layout>
 
