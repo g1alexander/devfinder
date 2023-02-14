@@ -1,0 +1,78 @@
+.container-card {
+  background: var(--dark-blue2);
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  display: flex;
+  /* justify-content: space-evenly; */
+  /* gap: 2rem; */
+}
+
+.container-card img {
+  border-radius: 50%;
+}
+
+.container-card aside {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  width: 25%;
+}
+
+.container-card article {
+  /* margin-left: 2rem; */
+  /* margin-top: 2rem; */
+  width: 75%;
+  padding-right: 2rem;
+}
+
+.container-card header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  /* border: 1px solid var(--dark-blue); */
+}
+
+.container-card header h2,
+h4 {
+  margin: 0;
+}
+
+.container-card header h2 {
+  font-weight: bold;
+}
+
+.container-card header h4 {
+  color: var(--dark-blue);
+}
+
+.container-card header span {
+  display: block;
+  margin-top: 0.2rem;
+  /* margin-right: 2rem; */
+}
+
+.container-card p {
+  font-size: 14px;
+}
+
+.container-card .stats {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  background: var(--dark-black);
+}
+
+.container-card .stats div {
+  padding: 1rem 0;
+  width: 33%;
+}
+
+.container-card .stats div:nth-child(1) {
+  padding-left: 1.5rem;
+}

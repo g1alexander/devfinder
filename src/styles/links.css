@@ -1,0 +1,31 @@
+.container-links {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.container-links > div {
+  width: 50%;
+}
+
+.container-links li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.container-links img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.container-links span {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.container-links .desactived {
+  opacity: 0.5;
+}
