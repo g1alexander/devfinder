@@ -1,7 +1,6 @@
 import "@styles/search.css";
 import { useState } from "react";
 import { userGithub } from "@store/state";
-import { useStore } from "@nanostores/react";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -65,8 +64,8 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="container-search">
-      <div>
+    <form onSubmit={handleSubmit} className="form-search">
+      <div className="form-search__block-one">
         <img src="/icons/icon-search.svg" alt="" />
 
         <input
@@ -77,7 +76,7 @@ const Search = () => {
         />
       </div>
 
-      <div>
+      <div className="form-search__block-two">
         {error && <span>No results</span>}
 
         <button type="submit">Search</button>

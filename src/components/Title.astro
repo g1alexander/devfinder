@@ -1,10 +1,10 @@
 ---
 ---
 
-<header>
-  <h1>devfinder</h1>
+<header class="header">
+  <h1 class="header__title">devfinder</h1>
 
-  <div>
+  <div class="header__button">
     <span>DARK</span>
     <img src="/icons/icon-moon.svg" alt="dark-mode" />
 
@@ -14,37 +14,33 @@
 </header>
 
 <style>
-  header {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--background);
-    border-bottom: 1px solid var(--border);
     width: 100%;
   }
 
-  header h1 {
+  .header .header__title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text);
   }
 
-  header div {
+  .header .header__button {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
-  header div span {
+  .header .header__button span {
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--text);
     margin-right: 0.5rem;
   }
 
-  header div img {
+  .header .header__button img {
     width: 1.5rem;
     height: 1.5rem;
-    cursor: pointer;
   }
 </style>

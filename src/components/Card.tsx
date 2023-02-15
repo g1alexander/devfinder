@@ -16,13 +16,13 @@ const Card = () => {
     return `${day} ${month} ${year}`;
   };
   return (
-    <section className="container-card">
-      <aside>
+    <section className="card">
+      <aside className="card__aside">
         <img src={user.avatar_url} alt="" width="150" height="150" />
       </aside>
 
-      <article>
-        <header>
+      <article className="card__article">
+        <header className="card__article-header">
           <div>
             <h2>{user.name}</h2>
             <h4>@{user.login}</h4>
@@ -33,7 +33,7 @@ const Card = () => {
 
         <p>{user.bio}</p>
 
-        <section className="stats">
+        <section className="card__article-stats">
           <div>
             <h4>Repos</h4>
             <span>{user.public_repos}</span>
