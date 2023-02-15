@@ -1,15 +1,13 @@
 ---
 import Card from "@components/Card";
 import Search from "@components/Search";
-import Title from "@components/Title.astro";
+import Title from "@components/Title";
 import Layout from "@layouts/Layout.astro";
-
-// https://api.github.com/users/  -- api github users
 ---
 
 <Layout title="devfinder">
   <main class="container">
-    <Title />
+    <Title client:load />
     <Search client:load />
     <Card client:load />
   </main>
