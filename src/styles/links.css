@@ -38,5 +38,4 @@
 .links .links__block-one a,
 .links .links__block-two a {
   text-decoration: underline;
-  color: var(--light-black);
 }

@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.header .header__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header .header__button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header .header__button span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.header .header__button img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header .header__button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}

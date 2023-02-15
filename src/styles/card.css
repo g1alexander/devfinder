@@ -1,5 +1,4 @@
 .card {
-  background: var(--light-white);
   margin-top: 1rem;
   width: 100%;
   border-radius: 1rem;
@@ -40,7 +39,6 @@ h4 {
 }
 
 .card .card__article .card__article-header h4 {
-  color: var(--light-blue);
 }
 
 .card .card__article .card__article-header span {
@@ -58,8 +56,6 @@ h4 {
   margin-bottom: 2rem;
   width: 100%;
   border-radius: 0.5rem;
-
-  background: var(--light-gray);
 }
 
 .card .card__article .card__article-stats div {

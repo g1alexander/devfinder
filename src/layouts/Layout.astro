@@ -6,7 +6,49 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<script>
+  import { darkMode } from "@store/state";
+
+  const prefersTheme = () => {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const prefersLightScheme = window.matchMedia(
+      "(prefers-color-scheme: light)"
+    );
+
+    const darkTheme = "dark-theme";
+    const lightTheme = "light-theme";
+
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add(darkTheme);
+        darkMode.set(true);
+        return;
+      }
+
+      document.body.classList.add(lightTheme);
+      darkMode.set(false);
+      return;
+    }
+
+    if (prefersDarkScheme.matches) {
+      document.body.classList.add(darkTheme);
+      localStorage.setItem("theme", "dark");
+      darkMode.set(true);
+
+      return;
+    }
+    if (prefersLightScheme.matches) {
+      document.body.classList.add(lightTheme);
+      localStorage.setItem("theme", "light");
+      darkMode.set(false);
+
+      return;
+    }
+  };
+
+  prefersTheme();
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -53,9 +95,9 @@ const { title } = Astro.props;
     color: var(--dark-white);
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* defaults to dark theme */
-    body {
+  @media (prefers-color-scheme: light) {
+    /* defaults to light theme */
+    body.dark-theme {
       background-color: var(--dark-black);
       color: var(--dark-white);
     }
@@ -64,19 +106,95 @@ const { title } = Astro.props;
       color: var(--light-black);
     }
 
-    .card,
-    .form-search {
+    body.dark-theme .header .header__button button {
+      color: var(--dark-white);
+    }
+
+    body.dark-theme .card,
+    body.dark-theme .form-search {
       background: var(--dark-blue2);
     }
-    .card .card__article .card__article-header h4 {
+    body.dark-theme .card .card__article .card__article-header h4 {
       color: var(--dark-blue);
     }
 
-    .card .card__article .card__article-stats {
+    body.dark-theme .card .card__article .card__article-stats {
       background: var(--dark-black);
     }
-    .links .links__block-one a,
-    .links .links__block-two a {
+    body.dark-theme .links .links__block-one a,
+    body.dark-theme .links .links__block-two a {
+      color: var(--dark-white);
+    }
+
+    body.light-theme .header .header__button button {
+      color: var(--light-black);
+    }
+
+    body.light-theme .card,
+    body.light-theme .form-search {
+      background: var(--light-white);
+    }
+    body.light-theme .card .card__article .card__article-header h4 {
+      color: var(--dark-blue);
+    }
+
+    body.light-theme .card .card__article .card__article-stats {
+      background: var(--light-gray);
+    }
+    body.light-theme .links .links__block-one a,
+    body.light-theme .links .links__block-two a {
+      color: var(--light-black);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body.dark-theme {
+      background-color: var(--dark-black);
+      color: var(--dark-white);
+    }
+    body.light-theme {
+      background-color: var(--light-gray);
+      color: var(--light-black);
+    }
+
+    body.light-theme .header .header__button button {
+      color: var(--light-black);
+    }
+
+    body.light-theme .card,
+    body.light-theme .form-search {
+      background: var(--light-white);
+    }
+    body.light-theme .card .card__article .card__article-header h4 {
+      color: var(--dark-blue);
+    }
+
+    body.light-theme .card .card__article .card__article-stats {
+      background: var(--light-gray);
+    }
+    body.light-theme .links .links__block-one a,
+    body.light-theme .links .links__block-two a {
+      color: var(--light-black);
+    }
+
+    body.dark-theme .header .header__button button {
+      color: var(--dark-white);
+    }
+
+    body.dark-theme .card,
+    body.dark-theme .form-search {
+      background: var(--dark-blue2);
+    }
+    body.dark-theme .card .card__article .card__article-header h4 {
+      color: var(--dark-blue);
+    }
+
+    body.dark-theme .card .card__article .card__article-stats {
+      background: var(--dark-black);
+    }
+    body.dark-theme .links .links__block-one a,
+    body.dark-theme .links .links__block-two a {
       color: var(--dark-white);
     }
   }
