@@ -34,4 +34,9 @@ const setData = (data: UserGithub) => {
   userGithub.set(data);
 };
 
-export { userGithub, setData };
+// darkmode
+const darkMode = atom<boolean>(
+  localStorage.getItem("theme") === "dark" || false
+);
+
+export { userGithub, setData, darkMode };
