@@ -13,9 +13,10 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="dark light" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="">
     <slot />
   </body>
 </html>
@@ -23,6 +24,7 @@ const { title } = Astro.props;
   @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
   :root {
+    color-scheme: light dark;
     /* shared */
     --red: #f74646;
     /* colors light */
@@ -40,9 +42,45 @@ const { title } = Astro.props;
   }
   html {
     font-family: "Space Mono", monospace;
+  }
+
+  body {
+    background-color: var(--light-gray);
+    color: var(--light-black);
+  }
+  body.dark-theme {
     background-color: var(--dark-black);
     color: var(--dark-white);
   }
+
+  @media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+      background-color: var(--dark-black);
+      color: var(--dark-white);
+    }
+    body.light-theme {
+      background-color: var(--light-gray);
+      color: var(--light-black);
+    }
+
+    .card,
+    .form-search {
+      background: var(--dark-blue2);
+    }
+    .card .card__article .card__article-header h4 {
+      color: var(--dark-blue);
+    }
+
+    .card .card__article .card__article-stats {
+      background: var(--dark-black);
+    }
+    .links .links__block-one a,
+    .links .links__block-two a {
+      color: var(--dark-white);
+    }
+  }
+
   body {
     height: 100vh;
     margin: 0;
