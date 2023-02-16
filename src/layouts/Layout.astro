@@ -1,4 +1,6 @@
 ---
+import "@styles/dark-mode.css";
+import "@styles/responsive.css";
 export interface Props {
   title: string;
 }
@@ -86,117 +88,13 @@ const { title } = Astro.props;
     font-family: "Space Mono", monospace;
   }
 
-  body {
+  body.light-theme {
     background-color: var(--light-gray);
-    color: var(--light-black);
+    color: var(--light-blue2);
   }
   body.dark-theme {
     background-color: var(--dark-black);
     color: var(--dark-white);
-  }
-
-  @media (prefers-color-scheme: light) {
-    /* defaults to light theme */
-    body.dark-theme {
-      background-color: var(--dark-black);
-      color: var(--dark-white);
-    }
-    body.light-theme {
-      background-color: var(--light-gray);
-      color: var(--light-black);
-    }
-
-    body.dark-theme .header .header__button button {
-      color: var(--dark-white);
-    }
-
-    body.dark-theme .card,
-    body.dark-theme .form-search {
-      background: var(--dark-blue2);
-    }
-    body.dark-theme .card .card__article .card__article-header h4 {
-      color: var(--dark-blue);
-    }
-
-    body.dark-theme .card .card__article .card__article-stats {
-      background: var(--dark-black);
-    }
-    body.dark-theme .links .links__block-one a,
-    body.dark-theme .links .links__block-two a {
-      color: var(--dark-white);
-    }
-
-    body.light-theme .header .header__button button {
-      color: var(--light-black);
-    }
-
-    body.light-theme .card,
-    body.light-theme .form-search {
-      background: var(--light-white);
-    }
-    body.light-theme .card .card__article .card__article-header h4 {
-      color: var(--dark-blue);
-    }
-
-    body.light-theme .card .card__article .card__article-stats {
-      background: var(--light-gray);
-    }
-    body.light-theme .links .links__block-one a,
-    body.light-theme .links .links__block-two a {
-      color: var(--light-black);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    /* defaults to dark theme */
-    body.dark-theme {
-      background-color: var(--dark-black);
-      color: var(--dark-white);
-    }
-    body.light-theme {
-      background-color: var(--light-gray);
-      color: var(--light-black);
-    }
-
-    body.light-theme .header .header__button button {
-      color: var(--light-black);
-    }
-
-    body.light-theme .card,
-    body.light-theme .form-search {
-      background: var(--light-white);
-    }
-    body.light-theme .card .card__article .card__article-header h4 {
-      color: var(--dark-blue);
-    }
-
-    body.light-theme .card .card__article .card__article-stats {
-      background: var(--light-gray);
-    }
-    body.light-theme .links .links__block-one a,
-    body.light-theme .links .links__block-two a {
-      color: var(--light-black);
-    }
-
-    body.dark-theme .header .header__button button {
-      color: var(--dark-white);
-    }
-
-    body.dark-theme .card,
-    body.dark-theme .form-search {
-      background: var(--dark-blue2);
-    }
-    body.dark-theme .card .card__article .card__article-header h4 {
-      color: var(--dark-blue);
-    }
-
-    body.dark-theme .card .card__article .card__article-stats {
-      background: var(--dark-black);
-    }
-    body.dark-theme .links .links__block-one a,
-    body.dark-theme .links .links__block-two a {
-      color: var(--dark-white);
-    }
   }
 
   body {
