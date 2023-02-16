@@ -73,11 +73,14 @@ const Search = () => {
           value={search}
           onChange={handleSearch}
           placeholder="Search Github username..."
+          style={error ? { minWidth: "24vw", margin: "0 0" } : {}}
         />
       </div>
 
       <div className="form-search__block-two">
-        {error && <span>No results</span>}
+        {error && (
+          <span style={error ? { fontSize: "9px" } : {}}>No results</span>
+        )}
 
         <button type="submit">Search</button>
       </div>
