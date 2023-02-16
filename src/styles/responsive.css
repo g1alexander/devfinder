@@ -1,0 +1,128 @@
+// media query for responsive design
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .card {
+    justify-content: center;
+  }
+  .card .card__article {
+    padding: 0;
+  }
+
+  .card .card__article .card__article-header {
+    align-items: center;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card .card__article .card__article-header h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 0.8rem;
+  }
+  .form-search {
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .form-search .form-search__block-one input {
+    font-size: 0.7rem;
+    min-width: 37vw;
+  }
+  .form-search .form-search__block-one img {
+    width: 20px;
+  }
+  .form-search .form-search__block-two {
+    padding: 0;
+  }
+  .form-search .form-search__block-two button {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .card .card__article .card__article-header img {
+    width: 100px;
+    height: 100px;
+  }
+  .card .card__article .card__article-header h2 {
+    font-size: 0.9rem;
+  }
+
+  .links .links__block-one span,
+  .links .links__block-one a,
+  .links .links__block-two span,
+  .links .links__block-two a {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  body {
+    font-size: 0.7rem;
+  }
+  .form-search .form-search__block-one {
+    padding: 0;
+  }
+
+  .form-search .form-search__block-one input {
+    font-size: 0.6rem;
+    min-width: 37vw;
+    margin: 0 0.5rem;
+  }
+  .form-search .form-search__block-one img {
+    width: 17px;
+  }
+  .card .card__article .card__article-header img {
+    width: 80px;
+    height: 80px;
+  }
+  .card .card__article .card__article-header {
+    gap: 0.5rem;
+  }
+  .card .card__article p {
+    font-size: 0.7rem;
+  }
+
+  .card .card__article .card__article-stats {
+    margin: 1rem 0;
+    justify-content: space-evenly;
+  }
+  .card .card__article .card__article-stats div {
+    text-align: center;
+  }
+
+  .card .card__article .card__article-stats div:nth-child(1) {
+    padding-left: 0;
+  }
+  .links {
+    flex-direction: column;
+  }
+
+  .links li {
+    margin-bottom: 0rem;
+  }
+
+  .links .links__block-one li,
+  .links .links__block-two li {
+    margin-bottom: 0.7rem;
+  }
+
+  .links .links__block-one li span,
+  .links .links__block-two li span {
+    /* margin-bottom: 0.7rem; */
+    width: 100%;
+  }
+  .links .links__block-one,
+  .links .links__block-two {
+    width: 100%;
+  }
+}
