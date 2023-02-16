@@ -33,34 +33,42 @@ const Links = () => {
     return value ? "" : "desactived";
   };
   return (
-    <ul className="links">
+    <section className="links">
       <div className="links__block-one">
-        <li className={isDesactived(user.location)}>
-          <img src="icons/icon-location.svg" alt="" />
+        <ul>
+          <li className={isDesactived(user.location)}>
+            <img src="icons/icon-location.svg" alt="" />
 
-          {isAvailable(user.location)}
-        </li>
+            {isAvailable(user.location)}
+          </li>
+        </ul>
 
-        <li className={isDesactived(user.blog)}>
-          <img src="icons/icon-website.svg" alt="" />
+        <ul>
+          <li className={isDesactived(user.blog)}>
+            <img src="icons/icon-website.svg" alt="" />
 
-          {isAvailable(user.blog, true)}
-        </li>
+            {isAvailable(user.blog, true)}
+          </li>
+        </ul>
       </div>
       <div className="links__block-two">
-        <li className={isDesactived(user.twitter_username)}>
-          <img src="icons/icon-twitter.svg" alt="" />
+        <ul>
+          <li className={isDesactived(user.twitter_username)}>
+            <img src="icons/icon-twitter.svg" alt="" />
 
-          {isAvailable(user.twitter_username, true, true)}
-        </li>
+            {isAvailable(user.twitter_username, true, true)}
+          </li>
+        </ul>
 
-        <li className={isDesactived(user.company)}>
-          <img src="icons/icon-company.svg" alt="" />
+        <ul>
+          <li className={isDesactived(user.company)}>
+            <img src="icons/icon-company.svg" alt="" />
 
-          {isAvailable(user.company)}
-        </li>
+            {isAvailable(user.company)}
+          </li>
+        </ul>
       </div>
-    </ul>
+    </section>
   );
 };
 

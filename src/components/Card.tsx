@@ -43,7 +43,7 @@ const Card = () => {
           )}
           <div>
             <h2>{user.name}</h2>
-            <h4>@{user.login}</h4>
+            <h3>{`@${user.login}`}</h3>
             {isTablet && <span>Joined {formatDate(user.created_at)}</span>}
           </div>
 

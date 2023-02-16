@@ -23,7 +23,7 @@
   body.dark-theme .form-search {
     background: var(--dark-blue2);
   }
-  body.dark-theme .card .card__article .card__article-header h4 {
+  body.dark-theme .card .card__article .card__article-header h3 {
     color: var(--dark-blue);
   }
 
@@ -43,7 +43,7 @@
   body.light-theme .form-search {
     background: var(--light-white);
   }
-  body.light-theme .card .card__article .card__article-header h4 {
+  body.light-theme .card .card__article .card__article-header h3 {
     color: var(--dark-blue);
   }
 
@@ -84,7 +84,7 @@
   body.light-theme .form-search {
     background: var(--light-white);
   }
-  body.light-theme .card .card__article .card__article-header h4 {
+  body.light-theme .card .card__article .card__article-header h3 {
     color: var(--dark-blue);
   }
 
@@ -104,7 +104,7 @@
   body.dark-theme .form-search {
     background: var(--dark-blue2);
   }
-  body.dark-theme .card .card__article .card__article-header h4 {
+  body.dark-theme .card .card__article .card__article-header h3 {
     color: var(--dark-blue);
   }
 

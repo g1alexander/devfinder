@@ -33,15 +33,13 @@
 }
 
 .card .card__article .card__article-header h2,
+h3,
 h4 {
   margin: 0;
 }
 
 .card .card__article .card__article-header h2 {
   font-weight: bold;
-}
-
-.card .card__article .card__article-header h4 {
 }
 
 .card .card__article .card__article-header span {
