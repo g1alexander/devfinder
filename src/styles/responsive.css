@@ -16,7 +16,8 @@
 
   .card .card__article .card__article-header {
     align-items: center;
-    gap: 0;
+    justify-content: start;
+    gap: 2rem;
   }
 }
 
@@ -26,51 +27,26 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .card .card__article {
+    width: 85%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   body {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .form-search {
     justify-content: space-evenly;
     gap: 0;
   }
-
-  .form-search .form-search__block-one input {
-    font-size: 0.7rem;
-    min-width: 37vw;
-  }
-  .form-search .form-search__block-one img {
-    width: 20px;
-  }
-  .form-search .form-search__block-two {
+  .form-search .form-search__block-one {
     padding: 0;
   }
   .form-search .form-search__block-two button {
     font-size: 0.7rem;
     margin: 0;
-  }
-  .card .card__article .card__article-header img {
-    width: 100px;
-    height: 100px;
-  }
-  .card .card__article .card__article-header h2 {
-    font-size: 0.9rem;
-  }
-
-  .links .links__block-one span,
-  .links .links__block-one a,
-  .links .links__block-two span,
-  .links .links__block-two a {
-    font-size: 0.7rem;
-  }
-}
-
-@media screen and (max-width: 411px) {
-  body {
-    font-size: 0.7rem;
-  }
-  .form-search .form-search__block-one {
-    padding: 0;
   }
 
   .form-search .form-search__block-one input {
@@ -81,6 +57,9 @@
   .form-search .form-search__block-one img {
     width: 17px;
   }
+  .card .card__article {
+    width: 85%;
+  }
   .card .card__article .card__article-header img {
     width: 80px;
     height: 80px;
@@ -88,6 +67,7 @@
   .card .card__article .card__article-header {
     gap: 0.5rem;
   }
+
   .card .card__article p {
     font-size: 0.7rem;
   }
@@ -109,6 +89,17 @@
 
   .links li {
     margin-bottom: 0rem;
+  }
+
+  .card .card__article .card__article-header h2 {
+    font-size: 0.9rem;
+  }
+
+  .links .links__block-one span,
+  .links .links__block-one a,
+  .links .links__block-two span,
+  .links .links__block-two a {
+    font-size: 0.7rem;
   }
 
   .links .links__block-one li,
