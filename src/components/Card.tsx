@@ -2,9 +2,12 @@ import Links from "./Links";
 import "@styles/card.css";
 import { useStore } from "@nanostores/react";
 import { userGithub } from "@store/state";
+import { useEffect, useState } from "react";
 
 const Card = () => {
   const user = useStore(userGithub);
+
+  const [isTablet, setTablet] = useState(false);
 
   // format date in day month year
   const formatDate = (date: string) => {
@@ -15,20 +18,36 @@ const Card = () => {
 
     return `${day} ${month} ${year}`;
   };
+
+  useEffect(() => {
+    const myFunction = (x: MediaQueryList) => setTablet(x.matches);
+
+    const x = window.matchMedia("(max-width: 769px)");
+
+    myFunction(x);
+
+    x.addEventListener("change", () => myFunction(x));
+  }, [isTablet]);
   return (
     <section className="card">
-      <aside className="card__aside">
-        <img src={user.avatar_url} alt="" width="150" height="150" />
-      </aside>
+      {!isTablet && (
+        <aside className="card__aside">
+          <img src={user.avatar_url} alt="" width="150" height="150" />
+        </aside>
+      )}
 
       <article className="card__article">
         <header className="card__article-header">
+          {isTablet && (
+            <img src={user.avatar_url} alt="" width="150" height="150" />
+          )}
           <div>
             <h2>{user.name}</h2>
             <h4>@{user.login}</h4>
+            {isTablet && <span>Joined {formatDate(user.created_at)}</span>}
           </div>
 
-          <span>Joined {formatDate(user.created_at)}</span>
+          {!isTablet && <span>Joined {formatDate(user.created_at)}</span>}
         </header>
 
         <p>{user.bio}</p>
